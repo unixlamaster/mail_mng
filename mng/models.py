@@ -5,6 +5,9 @@ class Virtual_domain(models.Model):
 	name = models.CharField(max_length=50)
 	class Meta:
 		db_table = "virtual_domains"
+	def __str__(self):
+		return self.name
+
 
 class Virtual_user(models.Model):
 	domain = models.ForeignKey(Virtual_domain, on_delete=models.CASCADE)
@@ -13,7 +16,7 @@ class Virtual_user(models.Model):
 	firstname = models.CharField(max_length=100)
 	tel_w1 = models.CharField(max_length=100)
 	surname = models.CharField(max_length=50)
-	quota = models.IntegerField
+	quota = models.IntegerField()
 	job = models.CharField(max_length=100)
 	tel_m = models.CharField(max_length=45)
 	born = models.CharField(max_length=10)
