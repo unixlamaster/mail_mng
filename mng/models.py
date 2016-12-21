@@ -25,3 +25,5 @@ class Virtual_user(models.Model):
 	pass_change = models.DateTimeField(default=timezone.now)
 	class Meta:
 		db_table = "virtual_users"
+	def __str__(self):
+		return self.user
